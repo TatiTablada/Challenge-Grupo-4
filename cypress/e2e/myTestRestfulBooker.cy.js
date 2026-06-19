@@ -15,5 +15,9 @@ describe ('Barra de Navegacion',()=>{
         cy.contains('h2', 'Our Rooms').should('be.visible');
         cy.contains('Double').should('be.visible');        
     })
+    it('Dirigir al usuario a la seccion Booking',()=>{
+        cy.get('#navbarNav').contains('Booking').click();
+        cy.contains('h3', 'Check Availability & Book Your Stay').should('be.visible');        
+    })
 
 })
