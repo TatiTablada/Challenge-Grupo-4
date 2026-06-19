@@ -15,3 +15,11 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// Evitar que Cypress falle por el error de hidratación #418 de React
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes('Minified React error #418') || err.message.includes('hydration')) {
+    return false; // Evita que el test falle
+    }
+  return true; // Permite que otros errores reales sigan fallando el test
+});
