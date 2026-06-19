@@ -10,5 +10,10 @@ describe ('Barra de Navegacion',()=>{
         cy.contains('Welcome to Shady Meadows B&B').should('be.visible');
         
     })
+    it('Dirigir al usuario a la seccion Rooms',()=>{
+        cy.get('#navbarNav').contains('Rooms').click();
+        cy.contains('h2', 'Our Rooms').should('be.visible');
+        cy.contains('Double').should('be.visible');        
+    })
 
 })
