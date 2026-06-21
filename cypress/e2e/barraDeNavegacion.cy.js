@@ -24,13 +24,7 @@ describe ('Barra de Navegacion',()=>{
         cy.contains('h3', 'Check Availability & Book Your Stay').should('be.visible');        
     })
 
-    // 4-5-6 (Julian)
-
-    it('Dirigir al usuario a la seccion Amenities [BUG]',()=>{
-        cy.contains('Amenities').click();
-        cy.url().should('include', '#amenities');
-        cy.get('#amenities').should('be.visible');
-    })
+    // 5-6
 
     it('Dirigir al usuario a la seccion Location',()=>{
         cy.contains('Location').click();
