@@ -27,11 +27,14 @@ describe('Formulario de contacto', () => {
     it('Formulario de contacto con datos validos', () => {
         cy.visit('https://automationintesting.online/')
         cy.get(':nth-child(5) > .nav-link').contains('Contact').click();
-        cy.get('[data-testid="ContactName"]').type('Admin');
-        cy.get('[data-testid="ContactEmail"]').type('admin@mail.com');
-        cy.get('[data-testid="ContactPhone"]').type('1234567891011');
-        cy.get('[data-testid="ContactSubject"]').type('Consulta');
-        cy.get('[data-testid="ContactDescription"]').type('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
+
+        cy.fixture('datosContacto').then((contactData) => {
+            cy.get('[data-testid="ContactName"]').type(contactData.name);
+            cy.get('[data-testid="ContactEmail"]').type(contactData.email);
+            cy.get('[data-testid="ContactPhone"]').type(contactData.telefono);
+            cy.get('[data-testid="ContactSubject"]').type(contactData.asunto);
+            cy.get('[data-testid="ContactDescription"]').type(contactData.mensaje);
+        });
         cy.get('.d-grid > .btn').click();
     })
 })
