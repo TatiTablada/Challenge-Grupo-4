@@ -36,5 +36,11 @@ describe('Formulario de contacto', () => {
             cy.get('[data-testid="ContactDescription"]').type(contactData.mensaje);
         });
         cy.get('.d-grid > .btn').click();
+        cy.get('.col-lg-8 > .card > .card-body').should('be.visible');
+        cy.get('.col-lg-8 > .card > .card-body').should('contain', 'Thanks for getting in touch Juana!');
+        cy.get('.col-lg-8 > .card > .card-body').should('contain', 'We\'ll get back to you about');
+        cy.get('.col-lg-8 > .card > .card-body').should('contain', 'Prueba de formulario de contacto');
+        cy.get('.col-lg-8 > .card > .card-body').should('contain', 'as soon as possible.');
+
     })
 })
