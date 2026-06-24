@@ -1,7 +1,0 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "telefono": "1234567891011",
-  "asunto": "Prueba de formulario de contacto",
-  "mensaje": "Hola, este es un mensaje de prueba para el formulario de contacto."
-}
