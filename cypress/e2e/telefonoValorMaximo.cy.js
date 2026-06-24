@@ -11,5 +11,7 @@ describe('Formulario de contacto - campo telefono', () => {
             cy.get('[data-testid="ContactDescription"]').type(contactData.mensaje);
         });
         cy.get('.d-grid > .btn').click();
+        cy.get('.alert.alert-danger').should('be.visible');
+        cy.get('.alert.alert-danger').should('contain', 'Phone must be between 11 and 21 characters.');
     })
 })

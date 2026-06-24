@@ -1,4 +1,4 @@
-describe('Contacto - Datos inválidos', () => {
+describe('Formulario de contacto', () => {
 
     it('Formulario de contacto con datos inválidos', () => {
         cy.visit('https://automationintesting.online/')
@@ -12,5 +12,10 @@ describe('Contacto - Datos inválidos', () => {
             cy.get('[data-testid="ContactDescription"]').type(contactData.mensaje);
         });
         cy.get('.d-grid > .btn').click();
+        cy.get('.alert.alert-danger').should('be.visible');
+        cy.get('.alert.alert-danger').should('contain', 'Subject must be between 5 and 100 characters.');
+        cy.get('.alert.alert-danger').should('contain', 'Phone must be between 11 and 21 characters.');
+        cy.get('.alert.alert-danger').should('contain', 'Message must be between 20 and 2000 characters.');
+        cy.get('.alert.alert-danger').should('contain', 'must be a well-formed email address');
     })
 })
