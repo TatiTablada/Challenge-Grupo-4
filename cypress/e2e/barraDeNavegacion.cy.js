@@ -3,7 +3,7 @@ describe ('Barra de Navegacion',()=>{
         cy.visit('https://automationintesting.online/')
     })
 
-    // 1-2-3
+    // NAVBAR-001, NAVBAR-002, NAVBAR-003
 
     it('Redireccionar al usuario al inicio',()=>{
         cy.get('#navbarNav').contains('Rooms').click();
@@ -24,16 +24,16 @@ describe ('Barra de Navegacion',()=>{
         cy.contains('h3', 'Check Availability & Book Your Stay').should('be.visible');        
     })
 
-    // 5-6
+    // NAVBAR-005, NAVBAR-006
 
     it('Dirigir al usuario a la seccion Location',()=>{
-        cy.contains('Location').click();
+        cy.get('#navbarNav').contains('Location').click();
         cy.url().should('include', '#location');
         cy.get('#location').should('be.visible');   
     })
 
     it('Dirigir al usuario a la seccion Contact',()=>{
-        cy.contains('Contact').click();
+        cy.get('#navbarNav').contains('Contact').click();
         cy.url().should('include', '#contact');
         cy.get('#contact').should('be.visible');
     })
