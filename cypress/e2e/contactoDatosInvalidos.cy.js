@@ -1,4 +1,4 @@
-describe('Contacto - Datos inválidos', () => {
+describe('Formulario de contacto', () => {
 
     it('Formulario de contacto con datos inválidos', () => {
         cy.visit('https://automationintesting.online/')
