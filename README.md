@@ -5,12 +5,12 @@ Este repositorio contiene la suite de pruebas automatizadas desarrollada para el
 ---
 
 ## 👥 Integrantes del Equipo
-*   **Micaela Martinez**
-*   **Tatiana Tablada**
-*   **Julian Sanguineti** 
-*   **Gerardo Lauro Romero**
-*   **Dario b**
-*   **Ariel Monfardini**
+*   **Micaela Martinez** micaelamartinez934@gmail.com 
+*   **Tatiana Tablada** tatitablada14@gmail.com
+*   **Julian Sanguineti** Juliangel2003@gmail.com
+*   **Gerardo Lauro Romero** gerardolauroromero@gmail.com
+*   **Dario b** Dariodev18@gmail.com
+*   **Ariel Monfardini** ariel.monfardini@gmail.com
 
 ---
 
@@ -21,20 +21,47 @@ Este repositorio contiene la suite de pruebas automatizadas desarrollada para el
 
 ---
 
+
 ## 📂 Estructura del Proyecto
 
-El proyecto mantiene una estructura organizada basada en las buenas prácticas de Cypress:
+El proyecto mantiene una estructura organizada basada en las buenas prácticas de Cypress, separando la lógica de los tests, los comandos personalizados y los datos de prueba:
 
 ```text
 Challenge-Grupo-4/
 ├── cypress/
 │   ├── e2e/
-│   │   ├── myTestRestfulBooker.cy.js  # Pruebas automatizadas del Formulario de Contacto
-│   │   └── barraDeNavegacion.cy.js # Pruebas de la Barra de Navegación
+│   │   ├── 1_reservar_double_room.cy.js    # Flujo de reserva para Habitación Doble
+│   │   ├── 2_elegir_fecha.cy.js            # Validación y selección de fechas en el calendario
+│   │   ├── 3_probar_mapa.cy.js             # Verificación visual y funcional del mapa de ubicación
+│   │   ├── 4_reservar_single_room.cy.js    # Flujo de reserva para Habitación Simple
+│   │   ├── AdminRooms.cy.js                # Pruebas del panel de administración de habitaciones
+│   │   ├── bookNowSuite.cy.js              # Flujo de reserva rápido para la Suite
+│   │   ├── contactoDatosInvalidos.cy.js    # Validación de alertas en el Formulario de Contacto
+│   │   ├── reservasInicio.cy.js            # Verificaciones generales en la pantalla de inicio
+│   │   ├── telefonoValorMaximo.cy.js       # Prueba de límite: Máximo de caracteres en teléfono
+│   │   └── telefonoValorMinimo.cy.js       # Prueba de límite: Mínimo de caracteres en teléfono
+│   │
 │   ├── fixtures/
-│   │   └── [archivo].json             # Datos de prueba estáticos (Fixtures)
+│   │   ├── datosContacto.json              # Datos válidos para el flujo feliz de contacto
+│   │   ├── datosInvalidosContacto.json     # Datos con errores para pruebas negativas de contacto
+│   │   ├── valor-maximo-datos.json         # Valores límite máximos para pruebas de frontera
+│   │   └── valor-minimo-datos.json         # Valores límite mínimos para pruebas de frontera
+│   │
 │   └── support/
-└── cypress.config.js                  # Configuración global de Cypress
+│       ├── commands.js                     # Custom Commands creados (ej: cy.llenarFormularioContacto)
+│       └── e2e.js                          # Configuración global de soporte de Cypress
+│
+├── cypress.config.js                       # Configuración general del framework
+├── package.json                            # Dependencias y scripts del proyecto
+└── README.md                               # Documentación principal del repositorio
+
+---
+
+## Link de Google sheets y Trello 
+
+Google Sheets:(https://docs.google.com/spreadsheets/d/1LnOtUhC2tWMmot4iqeZeBLTe_nUSgTDci1K1j0dh5xI/edit?usp=sharing)
+
+Trello: (https://trello.com/invite/b/6a2dc802dc1e629a09f70b27/ATTI5107023d5f1d8940af2ad3fc6520a330611CA783/reporte-de-bugs-grupo-4)
 
 --- 
 
