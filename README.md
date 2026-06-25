@@ -59,9 +59,9 @@ Challenge-Grupo-4/
 
 ## Link de Google sheets y Trello 
 
-Google Sheets:(https://docs.google.com/spreadsheets/d/1LnOtUhC2tWMmot4iqeZeBLTe_nUSgTDci1K1j0dh5xI/edit?usp=sharing)
+[Google Sheets](https://docs.google.com/spreadsheets/d/1LnOtUhC2tWMmot4iqeZeBLTe_nUSgTDci1K1j0dh5xI/edit?usp=sharing)
 
-Trello: (https://trello.com/invite/b/6a2dc802dc1e629a09f70b27/ATTI5107023d5f1d8940af2ad3fc6520a330611CA783/reporte-de-bugs-grupo-4)
+[Trello](https://trello.com/invite/b/6a2dc802dc1e629a09f70b27/ATTI5107023d5f1d8940af2ad3fc6520a330611CA783/reporte-de-bugs-grupo-4)
 
 --- 
 
