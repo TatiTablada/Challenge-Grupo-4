@@ -24,37 +24,19 @@ describe('Suite de pruebas para la sección de contacto', () => {
     })
 
 
-    describe('Formulario de contacto - campo telefono', () => {
-        it('Campo telefono con valor minimo', () => {
+    describe('Formulario de contacto - Validaciones del campo teléfono', () => {
 
-            cy.fixture('valor-minimo-datos').then((contactData) => {
-                cy.get('[data-testid="ContactName"]').type(contactData.name);
-                cy.get('[data-testid="ContactEmail"]').type(contactData.email);
-                cy.get('[data-testid="ContactPhone"]').type(contactData.telefono);
-                cy.get('[data-testid="ContactSubject"]').type(contactData.asunto);
-                cy.get('[data-testid="ContactDescription"]').type(contactData.mensaje);
+        const escenarios = [
+            { testName: 'Campo telefono con valor minimo', fixture: 'valor-minimo-datos' },
+            { testName: 'Campo telefono con valor maximo', fixture: 'valor-maximo-datos' }
+        ];
+
+        escenarios.forEach((escenario) => {
+            it(escenario.testName, () => {
+                cy.completarFormularioContacto(escenario.fixture);
+                cy.get('.alert.alert-danger').should('be.visible').and('contain', 'Phone must be between 11 and 21 characters.');
             });
-            cy.get('.d-grid > .btn').click();
-            cy.get('.alert.alert-danger').should('be.visible');
-            cy.get('.alert.alert-danger').should('contain', 'Phone must be between 11 and 21 characters.');
-        })
+        });
+
     })
-
-
-    describe('Formulario de contacto - campo telefono', () => {
-        it('Campo telefono con valor maximo', () => {
-
-            cy.fixture('valor-maximo-datos').then((contactData) => {
-                cy.get('[data-testid="ContactName"]').type(contactData.name);
-                cy.get('[data-testid="ContactEmail"]').type(contactData.email);
-                cy.get('[data-testid="ContactPhone"]').type(contactData.telefono);
-                cy.get('[data-testid="ContactSubject"]').type(contactData.asunto);
-                cy.get('[data-testid="ContactDescription"]').type(contactData.mensaje);
-            });
-            cy.get('.d-grid > .btn').click();
-            cy.get('.alert.alert-danger').should('be.visible');
-            cy.get('.alert.alert-danger').should('contain', 'Phone must be between 11 and 21 characters.');
-        })
-    })
-
-});
+})
