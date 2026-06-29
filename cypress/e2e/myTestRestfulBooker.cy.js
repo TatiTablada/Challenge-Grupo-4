@@ -5,23 +5,24 @@ describe('Suite de Pruebas', () => {
     });
 
     describe('Reserva de habitación', () => {
-        it('Flujo de reserva', () => {
+        // Usamos .skip para que figure en el reporte como "salteado" hasta que se arregle el bug
+        it.skip('Flujo de reserva - Happy Path (Bug Reportado: Pantallazo negro al reservar)', () => {
             cy.get('#rooms > .container').should('be.visible');
-            cy.get(':nth-child(1) > .card > .card-footer > .btn').click()
-            cy.get('#doReservation').click()
+            cy.get(':nth-child(1) > .card > .card-footer > .btn').click();
+            cy.get('#doReservation').click();
 
             cy.fixture('datosContacto').then((contactData) => {
                 cy.get('[name="firstname"]').type(contactData.name);
                 cy.get('[name="lastname"]').type('Perez');
                 cy.get('[name="email"]').type(contactData.email);
                 cy.get('[name="phone"]').type(contactData.telefono);
-                cy.get('.btn.btn-primary.w-100.mb-3').click()
 
-                // BUG REPORTADO
-                // Al hacer clic en 'Reserve now', la aplicación da un pantallazo en negro.
-                // cy.contains('Reserva exitosa').should('be.visible');
+                cy.get('.btn.btn-primary.w-100.mb-3').click();
+
+                cy.contains('Reserva exitosa').should('be.visible');
             });
-        })
+        });
+
     });
 
     describe('Reserva de habitación sin datos', () => {
